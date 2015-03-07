@@ -1,3 +1,23 @@
-<!doctype html> <html class=no-js> <head> <meta charset=utf-8> <meta name=description> <meta name=viewport content="width=device-width, initial-scale=1, minimal-ui"> <title>dmhschoir</title>  <link rel=stylesheet href=styles/main.css> <script src=scripts/vendor/modernizr.js></script> </head> <body> <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--> <header> <a href=index.html class=logo> <h1>DMHS Choir</h1> </a> <nav> <ul> <li><a href=index.html class=selected>Home</a></li> <li><a href=about.html>About</a></li> <li><a href=events.html>Events</a></li> <li><a href=contact.html>Contact</a></li> </ul> </nav> </header> <div class=hero-unit> <h1 class=hero-header>DMHS Choir</h1> <p>Welcome to the Desert Mountain High School Choir Website.</p> <p>This site is still under construction.</p>  </div> <script src=scripts/vendor.js></script> <script src=scripts/main.js></script> </body> </html> 
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
